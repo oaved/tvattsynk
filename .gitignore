@@ -27,6 +27,11 @@ yarn-error.log*
 
 # local env files
 .env*.local
+*.env
+*.env.*
+#!*.env.template
+#!*.env.*.template
+#The template thing in the end are just to demonstrate for other developers that there should be an .dev file. Maybe setup for later
 
 # vercel
 .vercel
