@@ -1,0 +1,41 @@
+[debug] [2024-10-21T18:15:58.057Z] ----------------------------------------------------------------------
+[debug] [2024-10-21T18:15:58.059Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\vedun\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init emulators
+[debug] [2024-10-21T18:15:58.059Z] CLI Version:   13.22.0
+[debug] [2024-10-21T18:15:58.060Z] Platform:      win32
+[debug] [2024-10-21T18:15:58.060Z] Node Version:  v20.17.0
+[debug] [2024-10-21T18:15:58.060Z] Time:          Mon Oct 21 2024 20:15:58 GMT+0200 (centraleuropeisk sommartid)
+[debug] [2024-10-21T18:15:58.060Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-21T18:15:58.104Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-21T18:15:58.105Z] > authorizing via signed-in user (vedungolof@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\vedun\dev\tvattsynk
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-10-21T18:16:02.611Z] Using project from CLI flag: tvattsynk-2669e
+[debug] [2024-10-21T18:16:02.613Z] Checked if tokens are valid: true, expires at: 1729536521408
+[debug] [2024-10-21T18:16:02.613Z] Checked if tokens are valid: true, expires at: 1729536521408
+[debug] [2024-10-21T18:16:02.614Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/tvattsynk-2669e [none]
+[debug] [2024-10-21T18:16:03.013Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/tvattsynk-2669e 200
+[debug] [2024-10-21T18:16:03.013Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/tvattsynk-2669e {"projectId":"tvattsynk-2669e","projectNumber":"888915201148","displayName":"TvattSynk","name":"projects/tvattsynk-2669e","resources":{"hostingSite":"tvattsynk-2669e"},"state":"ACTIVE","etag":"1_36b2d251-8657-42ab-991d-12b011cac092"}
+[info] i  Using project tvattsynk-2669e (TvattSynk) 
+[info] 
+=== Emulators Setup
