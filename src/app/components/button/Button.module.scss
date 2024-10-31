@@ -1,0 +1,18 @@
+@use "../../variables.scss" as *;
+
+.button {
+    display: inline-block;
+    border: 2px solid $clr-neutral-100;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background-color: transparent;
+    color: $clr-neutral-100;
+
+
+    &:hover {
+        color: $clr-primary-800;
+        background-color: $clr-neutral-100;
+        cursor: pointer;
+    }
+}

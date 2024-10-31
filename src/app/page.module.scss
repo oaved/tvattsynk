@@ -1,0 +1,7 @@
+@use "./variables.scss" as *;
+
+.body {
+    background-color: $clr-primary-800;
+    height: 100vh;
+    color: $clr-neutral-100;
+}
