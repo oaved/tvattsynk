@@ -44,7 +44,6 @@ export default function Booking() {
         
         setLoading(true);
         const unsubscribeFunctions: Unsubscribe[] = [];
-        const tempArr: Cell[][] = [];
     
         for (let i = 0; i < 4; i++) {
             const cellsColRef = collection(firestore, `associations/${associationId}/tables/week${i}/cells`);
@@ -55,10 +54,13 @@ export default function Booking() {
                     ...doc.data(),
                 } as Cell));
     
-                tempArr.push(cellDocs);
+                setCellDocsArr(prevArr => {
+                    const newArr = [...prevArr];
+                    newArr[i] = cellDocs;
+                    return newArr;
+                });
     
                 if (i === 3) {
-                    setCellDocsArr(tempArr);
                     setLoading(false); 
                 }
             });
