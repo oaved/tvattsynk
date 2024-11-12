@@ -15,8 +15,11 @@ export default function Header() {
         }
     })
 
-    function handleClick() {
+    function handleBookingClick() {
         router.push("/booking");
+    }
+    function handleSignUpClick() {
+        router.push("/adminSignUp")
     }
 
     if (userRole) {
@@ -30,7 +33,7 @@ export default function Header() {
                         <li className={styles.li}><Link href="/contact">Kontakt</Link></li>
                         <li className={styles.li}><Link href="/account">Konto</Link></li>
                     </ul>
-                    <Button onClick={handleClick} className={styles.button}>Boka tvättid</Button>
+                    <Button onClick={handleBookingClick} className={styles.button}>Boka tvättid</Button>
                 </nav>
             </div>
             );  
@@ -46,7 +49,7 @@ export default function Header() {
                         <li className={styles.li}><Link href="/contact">Kontakt</Link></li>
                         <li className={styles.li}><Link href="/signin">Logga in</Link></li>
                     </ul>
-                    <Button onClick={handleClick} className={styles.button}>Kom igång</Button>
+                    <Button onClick={handleSignUpClick} className={styles.button}>Kom igång</Button>
                 </nav>
             </div>
         );

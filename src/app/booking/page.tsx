@@ -37,6 +37,10 @@ export default function Booking() {
         if (currentAssociationId) {
             setAssociationId(currentAssociationId);
         }
+
+        const today = new Date();
+        const ISOWeek = getISOWeek(today);
+        setCurrentWeek(ISOWeek);
     }, []);
 
     useEffect(() => {
