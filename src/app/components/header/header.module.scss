@@ -5,6 +5,8 @@
     justify-content: space-around;
     align-items: center;
     padding: 2rem;
+    background-color: $clr-primary-800;
+    color: $clr-neutral-100;
 }
 
 .logo {
@@ -43,5 +45,12 @@ $nav-gap: 2rem;
         &::after {
             width: 100%;
         }
+    }
+}
+
+.button {
+    &:hover {
+        background: $foreground;
+        color: $background;
     }
 }

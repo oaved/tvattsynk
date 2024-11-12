@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { browserLocalPersistence, getAuth, onAuthStateChanged, setPersistence } from "firebase/auth";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -13,7 +13,46 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig)
-const auth = getAuth(app)
 const firestore = getFirestore(app)
+const auth = getAuth(app)
+
+async function mySetPersistence() {
+    try {
+        await setPersistence(auth, browserLocalPersistence)
+    } catch (error) {
+        console.error("Error setting auth persitance, error: ", error);
+    }
+}
+
+mySetPersistence();
+
+
+let currentUserUsername = null;
+let currentUserRole = null;
+let currentUserAssociationId = null;
+let currentUserdId = null;
+const unsub = onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        const userDocRef = doc(firestore, "allUsers", user.uid);
+        const userDoc = await getDoc(userDocRef);
+        if (userDoc.exists()) {
+            currentUserUsername = userDoc.data().username;
+            localStorage.setItem("userUsername", currentUserUsername);
+            currentUserRole = userDoc.data().role;
+            localStorage.setItem("userRole", currentUserRole)
+            currentUserAssociationId = userDoc.data().associationId;
+            localStorage.setItem("userAssociationId", currentUserAssociationId);
+            currentUserdId = userDoc.id;
+            localStorage.setItem("userId", currentUserdId);
+        }
+    } else {
+        localStorage.removeItem("userUsername")
+        localStorage.removeItem("userRole")
+        localStorage.removeItem("userAssociation")
+        
+    }
+})
+
+
 
 export { auth, firestore }

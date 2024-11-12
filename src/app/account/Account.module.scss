@@ -1,0 +1,27 @@
+@use "../variables.scss" as *;
+
+
+.page {
+
+}
+
+.body {
+    padding: 4rem;
+}
+
+.greeting {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.button {
+    background-color: $clr-primary-400 !important;
+    border-color: $clr-neutral-100 !important;  
+
+    &:hover {
+        background-color: $clr-neutral-100 !important;
+        color: $clr-primary-400;
+        border-color: $clr-primary-400 !important;
+    }
+}
+

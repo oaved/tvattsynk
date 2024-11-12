@@ -1,0 +1,85 @@
+@use "../variables.scss" as *;
+
+.body {
+
+}
+
+.bookingContainer {
+    display: grid;
+    place-content: center;
+    margin-block: 4rem;
+}
+
+.weekSelectorContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.weekSelectorButton {
+    background-color: $clr-primary-400 !important;
+
+    &:hover {
+        background-color: $clr-neutral-100 !important;
+        border-color: $clr-primary-400 !important;
+        color: $clr-primary-400 !important;
+    }
+}
+
+.weekNumber {
+    font-size: 3rem;
+}
+
+.table {
+    transform: translateX(-2.5rem);
+}
+
+.row {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.cell {
+    height: 4rem;
+    width: 6rem;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+// HUR SELECTAR MAN DATA-ATTRIBUT???!!
+.cell[data-cell-state=free] {
+    background-color: hsl(0 0 92);
+    &:hover {
+        background-color: lightgreen;
+    }
+}
+
+.cell[data-cell-state=reserved] {
+    background-color: green;
+    &:hover {
+        background-color: grey;
+    }
+}
+
+.cell[data-cell-state=occupied] {
+    background-color: red;
+    &:hover {
+        background-color: darkred;
+        cursor: default;
+    }
+}
+
+.infoCell {
+    height: 4rem;
+    width: 6rem;
+    display: grid;
+    place-content: center;
+    font-size: 1.25rem;
+}
