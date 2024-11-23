@@ -22,7 +22,7 @@ export default function AdminSignUp() {
         setEmail(event.target.value);
     }
     function handleUsernameChange(event: any) {
-        setAssociationName(event.target.value);  
+        setUsername(event.target.value);  
     }
     function handlePasswordChange(event: any) {
         setPassword(event.target.value);
@@ -53,7 +53,7 @@ export default function AdminSignUp() {
                 <input className={styles.input} type="text" id="username" onChange={handleUsernameChange} />
                 <label className={styles.label} htmlFor="password">Lösenord</label>
                 <input className={styles.input} type="password" id="password" onChange={handlePasswordChange}/>
-                <Button onClick={handleClick} className={styles.button}>Logga in</Button>
+                <Button onClick={handleClick} className={styles.button}>Registrera</Button>
             </div>
         </div>
     );
