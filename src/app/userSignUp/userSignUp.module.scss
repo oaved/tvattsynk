@@ -1,0 +1,44 @@
+@use "../variables.scss" as *;
+
+
+.body {
+    background-color: $background;
+    color: $foreground;
+    text-align: center;
+}
+
+.heading {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.container {
+    max-width: 30rem;
+    padding: 3rem;
+    margin-inline: auto;
+    display: grid;
+    margin-top: 4rem;
+    background-color: $foreground;
+    color: $background;
+}
+
+.label {
+    margin-bottom: 0.5rem;
+}
+
+.input {
+    max-width: 30rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+}
+
+.button {
+    border-color: $background !important;
+    color: $background !important;
+    margin-top: 1rem;
+
+    &:hover {
+        background-color: $background;
+        color: $foreground !important;       
+    }
+}
