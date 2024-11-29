@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Header from "../components/header/Header";
 import Button from "../components/button/Button";
 import styles from "./Booking.module.scss";
-import { collection, QuerySnapshot, getDocs, onSnapshot, doc, updateDoc } from "firebase/firestore";
+import { collection, QuerySnapshot, getDocs, onSnapshot, doc, updateDoc, getDoc } from "firebase/firestore";
 import { auth, firestore } from "@/lib/firebaseConfig";
 import { Unsubscribe } from "firebase/auth";
 
@@ -92,6 +92,7 @@ export default function Booking() {
     async function toggleReserved(cellId: string, state: string) {
         const cellDocRef = doc(firestore, `associations/${associationId}/tables/week${weekSelected}/cells/${cellId}`)
         try {
+            const docSnap = await getDoc(cellDocRef);
             if (state === "free") {
                 await updateDoc(cellDocRef, { reserved: true, userId: userId });
                 console.log("Reserved time")
@@ -135,11 +136,16 @@ export default function Booking() {
         for (let row = 0; row < numRows; row++) {
             const rowCells = cells.slice(row * numCols, row * numCols + numCols);
     
+            //  TODO Något konstigt med den här logiken, kontrollera vad userId är och vad varje cell.userId är
             const rowCellDivs = rowCells.map((cell) => {
-                const userId = cell.userId;
-                const state = cell.reserved
-                    ? cell.userId === userId ? "reserved" : "occupied"
-                    : "free";
+                let state: string;
+                if (cell.userId == userId) {
+                    state = "reserved";
+                } else if (cell.userId == "") {
+                    state = "free";
+                } else {
+                    state = "occupied";
+                }
                 
                 return (
                     <div
@@ -185,6 +191,7 @@ export default function Booking() {
     return (
         <div className={styles.body}>
             <Header />
+            <h1>{userId}</h1>
             <div className={styles.bookingContainer}>
                 <div className={styles.weekSelectorContainer}>
                     <Button onClick={decrementWeek} className={styles.weekSelectorButton}>Veckan innan</Button>

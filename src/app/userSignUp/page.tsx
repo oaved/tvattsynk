@@ -5,6 +5,7 @@ import Button from "../components/button/Button";
 import styles from "./userSignUp.module.scss"
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
+import userSignUp from "@/lib/userSignUp";
 
 //  test URL: localhost:3000/userSignUp?id=TUwFpBmgcLloBf1S9MnY
 //  registrering för glunten
@@ -28,8 +29,30 @@ export default function UserSignUp() {
         setPassword(event.target.value);
     }
 
-    function handleClick() {
+    async function handleClick() {
+        try {
+            if (associationId) {
+                await userSignUp(email, password, username, associationId);
+                router.push("/account");
+            }
+        } catch (error) {
+            console.error("Error signing up admin, error: ", error);
+        }
+        
+    }
 
+    if (!associationId) {
+        return (
+            <div className={styles.body}>
+                <Header />
+                <h2 className={styles.heading}>Kunde inte detektera någon förening i länken, testa att:</h2>
+                <ul>
+                    <li>Ladda om sidan</li>
+                    <li>Kopiera länken igen</li>
+                    <li>Prata med den ansvariga för din förening</li>
+                </ul>
+            </div>
+        );
     }
 
     return (
