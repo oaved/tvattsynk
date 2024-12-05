@@ -135,8 +135,6 @@ export default function Booking() {
     
         for (let row = 0; row < numRows; row++) {
             const rowCells = cells.slice(row * numCols, row * numCols + numCols);
-    
-            //  TODO Något konstigt med den här logiken, kontrollera vad userId är och vad varje cell.userId är
             const rowCellDivs = rowCells.map((cell) => {
                 let state: string;
                 if (cell.userId == userId) {
@@ -191,7 +189,6 @@ export default function Booking() {
     return (
         <div className={styles.body}>
             <Header />
-            <h1>{userId}</h1>
             <div className={styles.bookingContainer}>
                 <div className={styles.weekSelectorContainer}>
                     <Button onClick={decrementWeek} className={styles.weekSelectorButton}>Veckan innan</Button>
