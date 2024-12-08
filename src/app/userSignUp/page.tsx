@@ -5,7 +5,7 @@ import Button from "../components/button/Button";
 import styles from "./userSignUp.module.scss"
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-import userSignUp from "@/lib/userSignUp";
+import userSignUp from "../../lib/userSignUp";
 
 //  test URL: localhost:3000/userSignUp?id=TUwFpBmgcLloBf1S9MnY
 //  registrering för glunten

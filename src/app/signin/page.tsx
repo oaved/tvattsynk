@@ -3,7 +3,7 @@
 import styles from "./SignIn.module.scss";
 import Header from "../components/header/Header";
 import Button from "../components/button/Button";
-import signIn from "@/lib/signIn";
+import signIn from "../../lib/signIn";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
