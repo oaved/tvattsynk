@@ -43,7 +43,7 @@ next-env.d.ts
 #backend functions
 /functions
 /functions/**/
-/src/lib
+
 
 #   firestorerules
 firestore.rules
