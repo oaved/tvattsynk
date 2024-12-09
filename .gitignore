@@ -40,10 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-#backend functions
-/functions
-/functions/**/
 
-
-#   firestorerules
+# firestorerules
 firestore.rules

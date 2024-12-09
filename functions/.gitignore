@@ -9,9 +9,6 @@ typings/
 node_modules/
 *.local
 
-# adminSDKkey
-tvattsynk-2669e-firebase-adminsdk-g3m8y-fcf9ca1290.json
-
 # env
 .env*.local
 *.env
