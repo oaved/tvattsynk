@@ -5,7 +5,7 @@ import Header from "../components/header/Header";
 import Button from "../components/button/Button";
 import styles from "./Booking.module.scss";
 import { collection, QuerySnapshot, getDocs, onSnapshot, doc, updateDoc, getDoc } from "firebase/firestore";
-import { auth, firestore } from "@/lib/firebaseConfig";
+import { firestore } from "@/lib/firebaseConfig";
 import { Unsubscribe } from "firebase/auth";
 
 type Cell = {

@@ -2,30 +2,30 @@
 
 import Header from "../components/header/Header";
 import Button from "../components/button/Button";
-import styles from "./userSignUp.module.scss"
+import styles from "./userSignUp.module.scss";
 import { useSearchParams, useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, Suspense, ChangeEvent } from "react";
 import userSignUp from "../../lib/userSignUp";
 
-//  test URL: localhost:3000/userSignUp?id=TUwFpBmgcLloBf1S9MnY
-//  registrering för glunten
+//  Test URL: localhost:3000/userSignUp?id=TUwFpBmgcLloBf1S9MnY
+//  Registrering för glunten
 
-export default function UserSignUp() {
+function UserSignUpForm() {
     const router = useRouter();
     const searchParams = useSearchParams();
-    const associationId = searchParams.get("id");
+    const associationId = searchParams?.get("id");
 
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    
-    function handleEmailChange(event: any) {
+
+    function handleEmailChange(event: ChangeEvent<HTMLInputElement>) {
         setEmail(event.target.value);
     }
-    function handleUsernameChange(event: any) {
-        setUsername(event.target.value);  
+    function handleUsernameChange(event: ChangeEvent<HTMLInputElement>) {
+        setUsername(event.target.value);
     }
-    function handlePasswordChange(event: any) {
+    function handlePasswordChange(event: ChangeEvent<HTMLInputElement>) {
         setPassword(event.target.value);
     }
 
@@ -36,9 +36,8 @@ export default function UserSignUp() {
                 router.push("/account");
             }
         } catch (error) {
-            console.error("Error signing up admin, error: ", error);
+            console.error("Error signing up admin, error:", error);
         }
-        
     }
 
     if (!associationId) {
@@ -58,17 +57,26 @@ export default function UserSignUp() {
     return (
         <div className={styles.body}>
             <Header />
-            <h2 className={styles.heading}>Registrera din till din förening</h2>
+            <h2 className={styles.heading}>Registrera dig till din förening</h2>
             <p>Kul att du vill göra skillnad och gå med i framtiden!</p>
             <div className={styles.container}>
                 <label className={styles.label} htmlFor="email">Mejladress</label>
-                <input className={styles.input} type="email" id="email" onChange={handleEmailChange}/>
+                <input className={styles.input} type="email" id="email" onChange={handleEmailChange} />
                 <label className={styles.label} htmlFor="username">Användarnamn</label>
                 <input className={styles.input} type="text" id="username" onChange={handleUsernameChange} />
                 <label className={styles.label} htmlFor="password">Lösenord</label>
-                <input className={styles.input} type="password" id="password" onChange={handlePasswordChange}/>
+                <input className={styles.input} type="password" id="password" onChange={handlePasswordChange} />
                 <Button onClick={handleClick} className={styles.button}>Registrera</Button>
             </div>
         </div>
+    );
+}
+
+export default function UserSignUp() {
+
+    return (
+        <Suspense fallback={<div>Laddar...</div>}>
+            <UserSignUpForm />
+        </Suspense>
     );
 }
