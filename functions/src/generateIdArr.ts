@@ -1,5 +1,4 @@
 
-
 export default function generateIdArr(year: number, week: number): string[] {
     const baseWeekIds = [
         "Mo0610", "Mo1014", "Mo1418", "Mo1822",
