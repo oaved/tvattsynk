@@ -9,7 +9,7 @@ export default async function userSignUp(email: string, password: string, userna
     const user = userCred.user;
 
     //  firestore
-    const response = await fetch(process.env.NEXT_PUBLIC_USER_SIGN_UP_API_KEY as string, {
+    const response = await fetch(process.env.NEXT_PUBLIC_USER_SIGN_UP_URL as string, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

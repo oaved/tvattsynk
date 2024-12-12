@@ -6,7 +6,7 @@ export default async function adminSignUp(associationName: string, adminEmail:st
         const userCred = await createUserWithEmailAndPassword(auth, adminEmail, adminPassword);
         const user = userCred.user;
 
-        const response = await fetch(process.env.NEXT_PUBLIC_ADMIN_SIGN_UP_API_KEY as string, {
+        const response = await fetch(process.env.NEXT_PUBLIC_ADMIN_SIGN_UP_URL as string, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
