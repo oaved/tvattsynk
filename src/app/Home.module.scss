@@ -3,5 +3,225 @@
 .body {
     background-color: $background;
     color: $foreground;
-    height: 100vh;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: $main-mobile-padding;
+    padding-top: $main-mobile-padding + 5rem;
+    gap: 2rem;
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .button {
+        background: $clr-primary-400;
+        border-color: $clr-primary-400;
+
+        &:hover {
+            background: $clr-neutral-100 !important;
+            border-color: $clr-neutral-100 !important;
+            color: $clr-primary-400 !important;
+        }
+    }
+
+    img {
+
+        @media (min-width: $standard-media-breakpoint) {
+            max-width: 50%;
+        }
+    }
+
+    @media (min-width: $standard-media-breakpoint) {
+        flex-direction: row;
+        padding: $main-computer-padding;
+        padding-top: $main-computer-padding + 4rem;
+    }
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.heroButtonDiv {
+    display: flex;
+    gap: 1rem;
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    padding: $main-mobile-padding;
+    background-color: $clr-neutral-200;
+
+    @media (max-width: ($standard-media-breakpoint - 7em)) {
+        align-items: center;
+    }
+
+    @media (min-width: ($standard-media-breakpoint - 7em)) {
+        flex-direction: row;
+    }
+
+    @media (min-width: $standard-media-breakpoint) {
+        padding: $main-computer-padding;
+    }
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 20em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    &-image {
+        width: 100%;
+        height: 14em;
+        object-fit: cover;
+    }
+
+    &-title {
+        font-size: 1.5rem;
+        color: $clr-primary-800;
+        margin: 1rem 0;
+    }
+
+    &-list {
+        padding-left: 1rem;
+        margin: 0 1rem 1rem;
+        text-align: left;
+
+        li {
+            font-size: 1rem;
+            color: $clr-neutral-900;
+            margin: 0.5rem 0;
+        }
+    }
+
+    &-arrow {
+        display: inline-block;
+        font-size: 2rem;
+        color: $clr-primary-400;
+        margin-bottom: 1rem;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateX(5px);
+        }
+    }
+}
+
+.whoWeAre {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    padding: $main-mobile-padding;
+
+    .image {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin-bottom: 1rem;
+        /* Avstånd mellan bild och text */
+    }
+
+    .textContainer {
+        max-width: 600px;
+        margin: 0;
+        color: $clr-neutral-100;
+
+        .title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            font-size: 1rem;
+        }
+    }
+
+    @media (min-width: $standard-media-breakpoint) {
+        flex-direction: row;
+        /* För större skärm, bild och text bredvid varandra */
+        justify-content: space-between;
+        align-items: center;
+        padding: $main-computer-padding;
+
+        .image {
+            margin-bottom: 0;
+            max-width: 40%;
+        }
+
+        .text {
+            text-align: left;
+            max-width: 50%;
+        }
+    }
+}
+
+.cta {
+    padding: $main-mobile-padding;
+    text-align: center;
+    background-color: $clr-primary-400;
+    color: $clr-neutral-100;
+
+    @media (min-width: $standard-media-breakpoint) {
+        padding: $main-computer-padding;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+        max-width: 80%;
+        margin-inline: auto;
+        margin-bottom: 2rem;
+
+        @media (min-width: $standard-media-breakpoint) {
+            font-size: 2rem;
+        }
+    }
+    p {
+        font-size: 1rem;
+        max-width: 60%;
+        margin-inline: auto;
+        margin-bottom: 2rem;
+    }
+
+    .buttonContainer {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .button {
+        background-color: $clr-primary-800;
+        border-color: $clr-primary-800;
+        border-color: $clr-primary-400;
+
+        &:hover {
+            background: $clr-neutral-100;
+            border-color: $clr-neutral-100;
+            color: $clr-primary-800;
+        }
+    }
 }
