@@ -1,5 +1,5 @@
 "use client";
-import styles from "./Header.module.scss";
+import styles from "./header.module.scss";
 import Button from "../button/Button";
 import { useEffect, useState } from "react";
 import Link from "next/link";

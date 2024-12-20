@@ -36,7 +36,7 @@ export default function Footer() {
             <div className={styles.leftGroup}>
                 <span className={styles.logo}>TvättSynk</span>
                 <p>
-                    TvättSynk är ett digitalt molnbaset bokningssystem specialiserat mot tvättidsbokning.
+                    TvättSynk är ett digitalt molnbaset bokningssystem specialiserat för tvättidsbokning.
                 </p>
             </div>
 
