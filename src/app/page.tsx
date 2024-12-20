@@ -2,6 +2,7 @@
 
 import styles from "./Home.module.scss";
 import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 import Button from "./components/button/Button";
 
 export default function Home() {
@@ -96,6 +97,8 @@ export default function Home() {
           <Button className={styles.button} onClick={toSignUp}>Kom igång</Button>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

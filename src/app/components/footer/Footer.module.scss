@@ -1,0 +1,43 @@
+@use "../../variables.scss" as *;
+
+
+.footer {
+    padding: $main-mobile-padding;
+    padding-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media (min-width: $standard-media-breakpoint) {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: $main-computer-padding;
+    }
+}
+
+.logo {
+    font-size: 2.5rem;
+}
+
+.leftGroup {
+    max-width: 40%;
+    
+    p {
+        margin-top: 1rem;
+    }
+}
+
+.rightGroup {
+    ul {
+        list-style: none;
+        display: grid;
+        gap: 1rem;
+
+        .li {
+            padding: 0.5rem 0;
+            &:hover {
+                color: $clr-primary-400;
+            }
+        }
+    }
+}
